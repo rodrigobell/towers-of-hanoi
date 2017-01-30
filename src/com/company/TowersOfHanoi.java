@@ -1,13 +1,23 @@
 package com.company;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class TowersOfHanoi {
-	public int nDisks = 3;
-	public Peg A = new Peg("A", nDisks);
-	public Peg B = new Peg("B");
-	public Peg C = new Peg("C");
+	public int nDisks;
+	public Peg A = null;
+	public Peg B = null;
+	public Peg C = null;
+
+	public TowersOfHanoi() {}
+
+	public TowersOfHanoi(int nDisks) {
+		this.nDisks = nDisks;
+	}
 
 	public void start() {
+		A = new Peg("A", nDisks);
+		B = new Peg("B");
+		C = new Peg("C");
 		System.out.println("Move                Peg Configuration");
 		System.out.println("                    A         B         C");
 		System.out.print("init                ");
@@ -42,7 +52,11 @@ public class TowersOfHanoi {
 	}
 
     public static void main(String[] args) {
-		TowersOfHanoi tower = new TowersOfHanoi();
+		System.out.print("Enter number of discs: ");
+		Scanner scanner = new Scanner(System.in);
+		int nDisks = scanner.nextInt();
+
+		TowersOfHanoi tower = new TowersOfHanoi(nDisks);
 		tower.start();
     }
 }

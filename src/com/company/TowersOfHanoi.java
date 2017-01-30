@@ -8,7 +8,7 @@ public class TowersOfHanoi {
 	public Peg C = new Peg("C");
 
 	public void start() {
-		System.out.println("Move                   Peg Configuration");
+		System.out.println("Move                Peg Configuration");
 		System.out.println("                    A         B         C");
 		System.out.print("init                ");
 		for (int i = nDisks; i > 0; i--) {
